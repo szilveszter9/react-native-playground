@@ -1,4 +1,6 @@
-# API playground
+# React Native Playground
+
+* Written in JavaScript ES6 using React Native tested with Jest (jasmine)
 
 ## Install
 
