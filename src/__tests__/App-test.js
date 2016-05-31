@@ -1,4 +1,18 @@
-jest.disableAutomock();
+//jest.disableAutomock();
+jest.unmock('../App.js');
+jest.unmock('../app/components/MatchDay.jsx');
+jest.unmock('../app/actions/ViewActionCreators.js');
+jest.unmock('../app/Constants.js');
+jest.unmock('../app/utils/ApiUtil.js');
+jest.unmock('../app/lib/http.js');
+jest.unmock('keymirror');
+jest.unmock('../app/lib/MockXMLHttpRequest.js');
+jest.unmock('../app/actions/ServerActionCreators.js');
+jest.unmock('../app/actions/ViewActionCreators.js');
+jest.unmock('../app/AppDispatcher.js');
+jest.unmock('../app/stores/MatchStore.js');
+jest.unmock('flux');
+jest.mock('react-native');
 
 import App from '../App.js';
 
@@ -30,16 +44,16 @@ describe('App', () => {
     done();
   });
 
-  it('getMatchDataUrl should return a valid API url with the given matchID', done => {
+  it('getMatchActionsUrl should return a valid API url with the given matchID', done => {
     let matchID = 1234;
-    let url = app.getMatchDataUrl(matchID);
+    let url = app.getMatchActionsUrl(matchID);
     let expected = `http://pads6.pa-sport.com/api/football/match/actions/${apiKey}/${matchID}/json`;
     expect(url).toEqual(expected);
     done();
   });
 
-  it('getMatchDataUrl should return falsy if no matchID is passed', done => {
-    let url = app.getMatchDataUrl();
+  it('getMatchActionsUrl should return falsy if no matchID is passed', done => {
+    let url = app.getMatchActionsUrl();
     expect(url).toBeFalsy();
     done();
   });
