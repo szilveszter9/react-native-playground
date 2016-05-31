@@ -3,6 +3,16 @@
 * Written in JavaScript ES6 using React Native tested with Jest (jasmine)
 
 ## Install
+```
+git clone git@github.com:szilveszter9/react-native-playground.git
+cd react-native-playground
+npm install
+```
+
+## Test
+```
+npm test
+```
 
 ## In focus
 
